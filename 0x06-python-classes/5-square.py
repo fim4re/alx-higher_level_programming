@@ -34,5 +34,7 @@ class Square:
         """square with # character."""
         for i in range(0, self.__size):
             for j in range(self.__size):
-                print("#", end="\n" if j as self.__size - 1 and i != j else "")
-        print()
+                [print("#", end="")]
+                print("")
+        if self.__size == 0:
+            print("")
