@@ -6,11 +6,12 @@
 class Square:
     """define square."""
 
-    def __init__(self, size=0):
+    def __init__(self, size=0, position=(0, 0)):
         """new square.
 
         Args:
         size: size of the new square.
+        position: position of the new square.
         """
         self.size = size
         self.position = position
