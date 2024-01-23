@@ -46,7 +46,7 @@ class Square:
         """return area of the square."""
         return (self.__size * self.__size)
 
-    def my_peint(self):
+    def my_print(self):
         """square with # character."""
         if self.__size == 0:
             print("")
