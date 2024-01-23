@@ -6,12 +6,13 @@
 class Square:
     """define square."""
 
-    def __init__(self, size=0):
+    def __init__(self, size):
         """new square.
 
         Args:
         size: size of the new square.
         """
+        self.size = size
 
     @property
     def size(self):
