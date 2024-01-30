@@ -93,7 +93,7 @@ def rec_solve(brd, rows, queens, solt):
             tmp_brd[rows][x] = "Q"
             _x_out(tmp_brd, rows, x)
             solt = rec_solve(tmp_brd, rows + 1, queens + 1, solt)
-    return (solutions)
+    return (solt)
 
 
 if __name__ == "__main__":
