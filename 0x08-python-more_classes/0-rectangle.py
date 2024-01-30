@@ -2,4 +2,5 @@
 
 
 class Rectangle:
+
     pass
