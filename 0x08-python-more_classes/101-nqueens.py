@@ -18,7 +18,7 @@ def init_brd(m):
 
 
 def brd_dpcopy(brd):
-    """deepcopy of chessboard."""
+    """dpcopy of chessboard."""
     if isinstance(brd, list):
         return list(map(brd_dpcopy, brd))
     return (brd)
@@ -48,25 +48,29 @@ def _x_out(brd, rows, cols):
         brd[rows][x] = "x"
     for x in range(cols - 1, -1, -1):
         brd[rows][x] = "x"
-    for x in range(rows + 1, len(brd)):
+    for d in range(rows + 1, len(brd)):
         brd[d][cols] = "x"
     for d in range(rows - 1, -1, -1):
         brd[d][cols] = "x"
+    x = cols + 1
     for d in range(rows + 1, len(brd)):
         if x >= len(brd):
             break
         brd[d][x] = "x"
         x += 1
+    x = cols - 1
     for d in range(rows - 1, -1, -1):
         if x < 0:
             break
         brd[d][x]
         x -= 1
+    x = cols + 1
     for d in range(rows - 1, -1, -1):
         if x >= len(brd):
             break
         brd[d][x] = "x"
         x += 1
+    x = cols - 1
     for d in range(rows + 1, len(brd)):
         if x < 0:
             break
