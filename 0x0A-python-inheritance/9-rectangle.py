@@ -18,6 +18,4 @@ class Rectangle(BaseGeometry):
 
     def __str__(self):
         '''print() str() representation method.'''
-        string = "[Rectangle]"
-        string += str(self.__width) + "/" + str(self.__height)
-        return string
+        return "[Rectangle] " + str(self.__width) + "/" + str(self.__height)
