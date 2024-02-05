@@ -3,5 +3,5 @@
 
 
 def lookup(obj):
-        """Return an object available."""
-        return (dir(obj))
+    """Return an object available."""
+    return (dir(obj))
