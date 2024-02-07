@@ -4,7 +4,7 @@
 
 status_codes = {'200', '301', '400', '401', '403', '404', '405', '500'}
 total_size = count = 0
-size = 0
+
 
 def print_stats(size, status_codes):
     """accumulated metrics."""
@@ -12,6 +12,7 @@ def print_stats(size, status_codes):
 
 if __name__ == "__main__":
     import sys
+    size = 0
 
     try:
         for line in sys.stdin:
