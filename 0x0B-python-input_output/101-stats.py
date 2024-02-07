@@ -2,7 +2,8 @@
 """Read standard input and computes metrics."""
 
 
-status_codes = {'200', '301', '400', '401', '403', '404', '405', '500'}
+status_codes = {'200': 0, '301': 0, '400': 0, '401': 0,
+        '403': 0, '404': 0, '405': 0, '500': 0}
 total_size = count = 0
 
 
