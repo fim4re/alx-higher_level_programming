@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Read standard input and computes metrics."""
+import sys
 
 
 status_codes = {'200': 0, '301': 0, '400': 0, '401': 0,
