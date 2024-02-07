@@ -18,7 +18,7 @@ def print_stats():
 
 try:
     for line in sys.stdin:
-        spl + line.split()
+        spl = line.split()
         if len(spl) >= 2:
             stats = spl[-2]
             total_size += int(spl[-1])
