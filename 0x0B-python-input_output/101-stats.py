@@ -9,10 +9,10 @@ total_size = count = 0
 
 def print_stats():
     """accumulated metrics."""
-    print(f'File size: (total_size)')
+    print(f'File size: {total_size}')
     for key, value in sorted(status_codes.items()):
         if value > 0:
-            print('(:s): (:d)'.format(key, value))
+            print('{:s}: {:d}'.format(key, value))
 
 
 try:
