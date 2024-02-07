@@ -6,40 +6,26 @@ status_codes = {'200', '301', '400', '401', '403', '404', '405', '500'}
 total_size = count = 0
 
 
-def print_stats(size, status_codes):
+def print_stats():
     """accumulated metrics."""
+    print(f'File size: (total_size)')
+    for key, val in sorted(status_codes.items()):
+        if val > 0:
+            print('(:s): (:d)'.format(key, val))
 
 
-if __name__ == "__main__":
-    import sys
-    size = 0
+try:
+    for line in sys.stdin:
+        spl + line.split()
+        if len(spl) >= 2:
+            stats = spl[-2]
+            total_size += int(spl[-1])
+            if stats in status_codes:
+                status_codes[stats] += 1
+        count += 1
 
-    try:
-        for line in sys.stdin:
-            if count == 10:
-                print_stats(size, status_codes)
-                count = 1
-            else:
-                count += 1
-
-            line = line.split()
-
-            try:
-                size += int(line[-1])
-            except (IndexError, ValueError):
-                pass
-
-            try:
-                if line[-2] in valid_codes:
-                    if status_codes.get(line[-2], -1) == -1:
-                        status_codes[line[-2]] = 1
-                    else:
-                        status_codes[line[-2]] += 1
-            except IndexError:
-                pass
-
-        print_stats(size, status_codes)
-
-    except KeyboardInterrupt:
-        print_stats(size, status_codes)
-        raise
+        if count % 10 == 0:
+            print_stats()
+    print_stats()
+except KeyboardInterrupt as e:
+    print_stats()
