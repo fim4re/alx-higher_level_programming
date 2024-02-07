@@ -4,7 +4,7 @@
 
 status_codes = {'200', '301', '400', '401', '403', '404', '405', '500'}
 total_size = count = 0
-
+size = 0
 
 def print_stats(size, status_codes):
     """accumulated metrics."""
