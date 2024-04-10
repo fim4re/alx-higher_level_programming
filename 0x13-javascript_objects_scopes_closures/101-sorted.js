@@ -1,5 +1,5 @@
 #!/usr/bin/node
-const dic = require('./101-data').dic;
+const dic = require('./101-data').dict;
 
 const total = Object.entries(dic);
 const val = Object.values(dic);
