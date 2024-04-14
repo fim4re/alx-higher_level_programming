@@ -1,15 +1,13 @@
 #!/usr/bin/python3
-"""
-Contains State class and Base, an instance of declarative_base()
-"""
+""" Contains State class and Base"""
 from sqlalchemy import Column, Integer, String, MetaData
 from sqlalchemy.ext.declarative import declarative_base
 
 my_meta_data = MetaData()
-Bas = declarative_base(metadata=my_meta_data)
+Base = declarative_base(metadata=my_meta_data)
 
 
-class State(Bas):
+class State(Base):
     """ Class with id and name of each state"""
     __tablename__ = 'states'
     id = Column(Integer, unique=True, nullable=False, primary_key=True)
