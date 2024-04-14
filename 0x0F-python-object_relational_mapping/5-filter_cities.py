@@ -16,6 +16,6 @@ if __name__ == "__main__":
                 ORDER BY `c`.`id`")
     crs.execute(q)
 
-    print(", ".join([ci[2] for cit in crs.fetchall() if ci[4] == sys.argv[4]]))
+    print(", ".join([c[2] for c in crs.fetchall() if c[4] == sys.argv[4]]))
     crs.close()
     db.close()
