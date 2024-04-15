@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-""" lists all State objects that contain the letter a """
+""" prints the State object with the name passed as argument """
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import State
+
 
 if __name__ == "__main__":
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
@@ -11,5 +12,8 @@ if __name__ == "__main__":
     # create session
     Session = sessionmaker(bind=engine)
     sen = Session()
-    for inst in sen.query(State).filter(State.name.like('%a%')):
-        print(inst.id, inst.name, sep=": ")
+    inst = sen.query(State).filter(State.name == (sys.argv[4],))
+    try:
+        print(inst[0].id)
+    except IndexError:
+        print("Not found")
