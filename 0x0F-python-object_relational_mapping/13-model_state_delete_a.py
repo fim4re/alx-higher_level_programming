@@ -12,8 +12,7 @@ if __name__ == "__main__":
     # Create a session
     Session = sessionmaker(bind=engine)
     sen = Session()
-    for stat in sen.query(State):
-        if "a" in stat.name:
-            sen.delete(stat)
+    for state in sen.query(State):
+        if "a" in state.name:
+            sen.delete(state)
     sen.commit()
-
