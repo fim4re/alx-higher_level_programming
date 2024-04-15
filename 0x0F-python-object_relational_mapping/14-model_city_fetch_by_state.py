@@ -13,6 +13,6 @@ if __name__ == "__main__":
     # create session
     Session = sessionmaker(bind=engine)
     session = Session()
-    for inst in (session.query(State.name, City.id, City.name)
-                     .filter(City.state_id == State.id)):
+    for city, state in (session.query(State.name, City.id, City.name)
+                     .filter(City.state_id == State.id).order_by(City.id)):
         print("{}: ({}) {}".format(state.name, city.id, city.name))
