@@ -14,5 +14,5 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     sen = Session()
     for inst in (sen.query(State.name, City.id, City.name)
-                     .filter(State.id == City.state_id)):
+                     .filter(State.id == City.state_id).order_by(City.id)):
         print(inst[0] + ": (" + str(inst[1]) + ") " + inst[2])
