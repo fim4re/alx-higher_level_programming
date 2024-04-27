@@ -2,16 +2,16 @@
 """that takes in a URL and an email,
 sends a POST request to the passed URL
     """
-    import sys
-    import urllib.parse
-    import urllib.request
+import sys
+import urllib.parse
+import urllib.request
 
 
-    if __name__ == "__main__":
-        url = sys.argv[1]
-        val = {"email": sys.argv[2]}
-        dt = urllib.parse.urlencode(val).encode("ascii")
+if __name__ == "__main__":
+    url = sys.argv[1]
+    val = {"email": sys.argv[2]}
+    dt = urllib.parse.urlencode(val).encode("ascii")
 
-        req = urllib.request.Request(url, dt)
-        with urllib.request.urlopen(req) as res:
-            print(res.read().decode("utf-8"))
+req = urllib.request.Request(url, dt)
+with urllib.request.urlopen(req) as res:
+    print(res.read().decode("utf-8"))
