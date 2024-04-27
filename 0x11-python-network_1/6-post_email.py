@@ -6,7 +6,6 @@ import requests
 
 if __name__ == "__main__":
     urll = sys.argv[1]
-    mail = sys[2]
-    request = request.post(urll, data={'email': email})
-    with urllib.request.urlopen(request) as res:
-        print(res.text))
+    email = sys.argv[2]
+    res = requests.post(urll, data={'email': email})
+    print(res.text)
