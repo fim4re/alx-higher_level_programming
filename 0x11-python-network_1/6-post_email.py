@@ -2,7 +2,7 @@
 """ that takes in a URL and an email address, sends a POST
 """
 import sys
-import requests
+import urllib.requests
 
 if __name__ == "__main__":
     urll = sys.argv[1]
